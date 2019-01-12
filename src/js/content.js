@@ -12,12 +12,27 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 });
 
 function detectEC() {
-  if (isStoresJP()) {
-    return 'STORES.jp';
-  }
-  return 'unknown';
+  let result = 'unknown';
+
+  const detections = {
+    'STORES.jp': isStoresJP,
+    BASE: isBASE,
+  };
+
+  Object.entries(detections).some(([ec, detecter]) => {
+    console.log(ec, detecter());
+    if (detecter() === true) {
+      result = ec;
+      return true;
+    }
+  });
+
+  return result;
 }
 
 function isStoresJP() {
   return document.querySelector('html').getAttribute('ng-app') === 'StoresJp';
+}
+function isBASE() {
+  return document.querySelector('meta[content="BASE"]') !== null;
 }
