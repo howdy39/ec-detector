@@ -6,6 +6,9 @@
     "lint": "eslint src --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/howdy39/ec-detector.git"
@@ -20,6 +23,7 @@
     "eslint": "^5.12.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-prettier": "^3.0.1",
+    "pre-commit": "^1.2.2",
     "prettier": "^1.15.3"
   }
 }
