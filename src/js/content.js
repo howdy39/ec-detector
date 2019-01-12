@@ -1,4 +1,4 @@
-console.info('EC Detector');
+console.info("EC Detector");
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   console.debug('content', request, sender);
