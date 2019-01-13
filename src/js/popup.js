@@ -15,6 +15,15 @@ window.addEventListener('DOMContentLoaded', function() {
 
   function sendMessageCallback(response) {
     console.log(response);
-    document.getElementById('debug').textContent = JSON.stringify(response, null, 2);
+    console.debug(JSON.stringify(response, null, 2));
+    if (response.ec.url) {
+      document.querySelector('#ec-list').classList.remove('hidden');
+      document.getElementById('title').textContent = response.title;
+      document.getElementById('url').textContent = response.url;
+      document.querySelector('#ec').href = response.ec.url;
+      document.querySelector('#ec img').src = response.ec.logo;
+    } else {
+      document.querySelector('#unknown').classList.remove('hidden');
+    }
   }
 });

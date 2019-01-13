@@ -2,13 +2,27 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/tailwind.min.css">
+  <link rel="stylesheet" href="../css/popup.css">
   <script src="../js/popup.js"></script>
 </head>
-<body>
-  <header>
-    EC Detector
+<body class="popup">
+  <header class="popup__header">
+    <h2>EC Detector</h2>
   </header>
-  <div>
+  <div class="popup__container">
+    <ul id="ec-list" class="list-reset hidden">
+      <li class="list__item"><span id="title"></span></li>
+      <li class="list__item"><span id="url"></span></li>
+      <li class="list__item">
+        <a id="ec" href="" target="_blank" rel="noopener">
+          <img src="" class="ec__img" />
+        </a>
+      </li>
+    </ul>
+    <p id="unknown" class="hidden">
+      Unknown
+    </p>
     <p id="debug"></p>
   </div>
 </body>

@@ -1,0 +1,24 @@
+body {
+  font-size: 16px;
+}
+
+.popup {
+  width: 380px;
+}
+.popup__header {
+  padding: 10px;
+  background-color: grey;
+  color: white;
+}
+
+.popup__container {
+  padding: 16px;
+}
+
+.list__item + .list__item {
+  margin: 10px 0 0 0;
+}
+
+.ec__img {
+  height: 32px;
+}
