@@ -1,6 +1,5 @@
 node_modules/
-dest/
-extension/
+dist/
 npm-debug.log
 
 .vscode
