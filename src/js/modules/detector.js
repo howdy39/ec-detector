@@ -1,15 +1,3 @@
-console.info('EC Detector');
-
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  const ec = detectEC();
-  const message = {
-    url: window.location.origin,
-    title: document.querySelector('title').textContent,
-    ec: ec,
-  };
-  sendResponse(message);
-});
-
 const ecMap = {
   STORESJP: {
     url: 'https://stores.jp',
@@ -27,7 +15,7 @@ const ecMap = {
   },
 };
 
-function detectEC() {
+export function detectEC() {
   let result;
 
   result = Object.entries(ecMap).find(([, ecData]) => {
