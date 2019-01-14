@@ -8,4 +8,9 @@ describe('Detectable EC', function() {
     cy.visit('https://senbei.saleshop.jp');
     cy.get('meta[content="BASE"]').should('exist');
   });
+
+  it('Detectable SHOPIFY', function() {
+    cy.visit('https://jp.kurasu.kyoto');
+    cy.get('[src*="cdn.shopify.com"]').should('exist');
+  });
 });
